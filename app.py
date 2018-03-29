@@ -1,4 +1,4 @@
-from urllib.parse import urlencode
+#from urllib.parse import urlencode
 
 import requests
 from flask import Flask, redirect, request, render_template_string, session
@@ -9,6 +9,9 @@ url_callback = '<YOUR_NGROK_URL>'
 client_id = '<YOUR_CLIENT_ID>'
 client_secret = '<YOUR_CLIENT_SECRET>'
 app.secret_key = '<YOUR APP SECRET>'
+
+#or put them in fc_keys.py
+import fc_keys
 
 fc_url = 'https://fcp.integ01.dev-franceconnect.fr'
 fc_url_authorize = fc_url + '/api/v1/authorize'
