@@ -1,4 +1,4 @@
-#from urllib.parse import urlencode
+from urllib import urlencode
 
 import requests
 from flask import Flask, redirect, request, render_template_string, session
@@ -8,10 +8,10 @@ app = Flask(__name__)
 url_callback = '<YOUR_NGROK_URL>'
 client_id = '<YOUR_CLIENT_ID>'
 client_secret = '<YOUR_CLIENT_SECRET>'
-app.secret_key = '<YOUR APP SECRET>'
+app.secret_key = 'deadbeef'
 
 #or put them in fc_keys.py
-import fc_keys
+from fc_keys import *
 
 fc_url = 'https://fcp.integ01.dev-franceconnect.fr'
 fc_url_authorize = fc_url + '/api/v1/authorize'
@@ -97,4 +97,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(host='10.132.0.2',port=5000)
