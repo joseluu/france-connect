@@ -29,7 +29,7 @@ def root():
             'state': 'test',
             'nonce': 'test',
             'redirect_uri': url_callback + '/france_connect',
-            'scope': 'openid identite_pivot something_obviously_wrong',
+            'scope': 'openid identite_pivot',
         }
         return redirect(fc_url_authorize + '?' + urlencode(data))
     else:
